@@ -22,6 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Hide keys
+gem 'dotenv-rails', groups: [:development, :test]
+
+# Cloudinary gem
+gem 'cloudinary', '~> 1.16.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
