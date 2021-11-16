@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :booking_id, only: %i[destroy]
+  before_action :booking_id, only: :destroy
 
   def new
     @booking = Booking.new
