@@ -8,20 +8,22 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
   end
 
-  # def new
-  #   @tour = Tour.new
-  # end
+  def new
+    @tour = Tour.new
+  end
 
-  # def create
-  #   @user = User.find(params[:user_id])
-  #   @tour = Tour.new(tour_params)
-  #   @tour.user = @user
-  #   if @tour.save
-  #     redirect_to @
-  #   else
-  #     render :new
-  #   end
-  # end
+  def create
+    # @user = current_user <- replace line below with this after devise is up & running
+    @user = User.find(5)
+    @tour = Tour.new(tour_params)
+    @tour.user = @user
+    if @tour.save
+      # change 'tours_path' to 'my tours' later?
+      redirect_to tours_path
+    else
+      render :new
+    end
+  end
 
   private
 

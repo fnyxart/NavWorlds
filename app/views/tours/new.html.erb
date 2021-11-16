@@ -1,0 +1,8 @@
+<h1>Add a new tour!</h1>
+<%= simple_form_for([@user, @tour]) do |f| %>
+  <%= f.input :name, placeholder: "Enter tour name"%>
+  <%= f.input :description , placeholder: "Describe the tour experience here!" %>
+  <%= f.input :photo_url, placeholder: "https://source.unsplash.com/random/400x200" %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>

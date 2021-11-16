@@ -5,3 +5,5 @@
   <li><%=tour.name%> - <img src='<%=tour.photo_url %>' style='height:100px'> - <%= link_to 'See Details', tour_path(tour) %> </li>
   <% end %>
 </ul>
+
+<%= link_to "Add a new tour", new_tour_path, class: 'btn btn-primary' %>
