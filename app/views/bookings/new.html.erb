@@ -1,2 +1,6 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+
+<h3>Book a tour <%= @user.email %> here: </h3>
+<%= form_for [@user, @booking] do |f| %>
+  <%= f.date_select :dates %>
+  <%= f.submit %>
+<% end %>
