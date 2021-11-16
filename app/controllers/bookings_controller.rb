@@ -1,8 +1,14 @@
 class BookingsController < ApplicationController
-  before_action :booking_id, only: :destroy
+  before_action :booking_id, only: %i[destroy]
+
+  def index
+    # Show all bookings that belong to current user
+    @bookings = Booking.where(user: current_user)
+  end
 
   def new
     @booking = Booking.new
+    @tour = Tour.find(params[:tour_id])
   end
 
   def create
@@ -11,8 +17,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.tour = @tour
-    if booking.save!
-      redirect_to tour_path
+    if @booking.save!
+      redirect_to tour_path(@tour)
     else
       render :new
     end
