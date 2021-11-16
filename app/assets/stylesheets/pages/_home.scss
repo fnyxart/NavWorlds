@@ -1,1 +1,38 @@
 // Specific CSS for your home-page
+body {
+background-color: rgb(19, 44, 51);
+margin: 0;
+padding: 0;
+}
+
+#title {
+font-family: Cinzel, sans-serif;
+color: white;
+font-size: 80px;
+position: relative;
+left: 15px;
+}
+
+.container {
+background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2017%2F03%2Frsz_shutterstock_310093031-e1489424931357.jpg&f=1&nofb=1');
+height: 500px;
+width: 80%;
+margin: 400px auto;
+border: 2px solid black;
+border-radius: 3px;
+}
+
+#search-bar {
+position: relative;
+width: 80%;
+padding-left: 5px;
+border-radius: 2px;
+left: 10%;
+top: 43%;
+height: 40px;
+font-size: 25px;
+}
+
+#search-button {
+  z-index: 5;
+}

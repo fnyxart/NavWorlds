@@ -1,6 +1,6 @@
 <h1> <%= @tour.name %> </h1>
 
 
-<p> <img src='<%= @tour.photo_url%>' style='height:400px'> <%= @tour.description %> - £<%= @tour.price %> </p>
+<p> <img src='<%= @tour.photo_url%>' style='height:300px'> <%= @tour.description %> - £<%= @tour.price %> </p>
 
 <%= link_to "Back to all tours", tours_path, class: 'btn btn-secondary' %>
