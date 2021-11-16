@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+#index-list {
+  position: relative;
+  top: 110px;
+}
+
+.btn {
+  position: relative;
+  top: 160px;
+}
+
+.list-item {
+  margin-top: 40px;
+  z-index: 0;
+}
