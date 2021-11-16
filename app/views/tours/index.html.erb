@@ -1,0 +1,7 @@
+<h1> All Tours </h1>
+
+<ul>
+  <% @tours.each do |tour| %>
+  <li><%=tour.name%> - <img src='<%=tour.photo_url %>' style='height:100px'> - <%= link_to 'See Details', tour_path(tour) %> </li>
+  <% end %>
+</ul>
