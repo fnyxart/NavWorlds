@@ -6,79 +6,87 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Create 15 random users:
-15.times do
+# Create 10 random users:
+10.times do
   user = User.create(
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 10, max_length: 20)
   )
-  puts "crated user '#{user.email}' !"
+  puts "created user '#{user.email}' !"
 end
+
+# Create 'tour guide' users for demo:
+white_rabbit = User.create(
+  email: "white@rabbit.wld",
+  password: "Ra66iT-123"
+)
+
+superman = User.create(
+  email: "super@man.mpl",
+  password: "Sup3rMan2000"
+)
+
+aslan = User.create(
+  email: "aslan@lion.zoo",
+  password: "z00k33per"
+)
 
 puts "Created #{User.count} users !"
 puts "~~~~~~~~~"
 
 # Create 6 tours with one of the first 6 users as 'guide':
-tour1 = Tour.create(
-  user: User.find(1),
+wonderland = Tour.create(
+  user: white_rabbit,
   name: "Wonderland",
-  description: "",
+  description: "The setting is Wonderland, a strange and seemingly crazy world that is entered by dropping into a rabbit hole. Animals act as normal people. ... The land is heavily wooded and grows mushrooms. There are well-kept gardens and substantial houses, such as those of the Duchess and the White Rabbit. Wonderland has a seacoast, where the Mock Turtle lives.",
   price: (99..999).to_a.sample,
-  photo_url: ""
+  photo_url: "https://www.albawaba.com/sites/default/files/styles/default/public/im/wonderland-alice.jpg?itok=xPE8tUDt"
 )
-puts "created tour: '#{tour1.name}' !"
+puts "created tour: '#{wonderland.name}' !"
 
-
-tour2 = Tour.create(
-  user: User.find(2),
+narnia = Tour.create(
+  user: aslan,
   name: "Narnia",
   description: "",
   price: (99..999).to_a.sample,
   photo_url: ""
 )
-puts "created tour: '#{tour2.name}' !"
+puts "created tour: '#{narnia.name}' !"
 
-tour3 = Tour.create(
+gotham = Tour.create(
   user: User.find(3),
-  name: "Narnia",
+  name: "Gotham",
   description: "",
   price: (99..999).to_a.sample,
   photo_url: ""
 )
-puts "created tour: '#{tour3.name}' !"
+puts "created tour: '#{gotham.name}' !"
 
-tour4 = Tour.create(
-  user: User.find(4),
+metropolis = Tour.create(
+  user: superman,
   name: "Metropolis",
-  description: "",
+  description: "The idea of describing a city of about one hundred years hence, with all its modern achievements, is of course a very tempting and interesting one, for everyone likes to have a glimpse into the future, and nearly everybody has some idea of the technical developments of some kind, according to their imagination… See if this one can match yours!",
   price: (99..999).to_a.sample,
-  photo_url: ""
+  photo_url: "https://images.unsplash.com/photo-1517144447511-aebb25bbc5fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80"
 )
-puts "created tour: '#{tour4.name}' !"
+puts "created tour: '#{metropolis.name}' !"
 
-tour5 = Tour.create(
+hell = Tour.create(
   user: User.find(5),
   name: "Hell",
   description: "",
   price: (99..999).to_a.sample,
   photo_url: ""
 )
-puts "created tour: '#{tour5.name}' !"
+puts "created tour: '#{hell.name}' !"
 
-tour6 = Tour.create(
+mars = Tour.create(
   user: User.find(6),
   name: "Mars",
-  description: "",
-  price: (99..999).to_a.sample,
-  photo_url: ""
+  description: "The cruise phase begins after the spacecraft separates from the rocket, soon after launch. The spacecraft departs Earth at a speed of about 24,600 mph (about 39,600 kph). The trip to Mars will take about seven months and about 300 million miles (480 million kilometers).",
+  price: 9999,
+  photo_url: "https://images.unsplash.com/photo-1571769267292-e24dfadebbdc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1780&q=80"
 )
-puts "created tour: '#{tour5.name}' !"
-
+puts "created tour: '#{mars.name}' !"
 
 puts "Finished creating #{Tour.count} tours !"
-
-
-
-Metropolis
-Gotham
-Hell
