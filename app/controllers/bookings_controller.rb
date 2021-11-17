@@ -6,11 +6,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-  def new
-    @booking = Booking.new
-    @tour = Tour.find(params[:tour_id])
-  end
-
   def create
     @user = current_user
     @tour = Tour.find(params[:tour_id])
@@ -18,9 +13,9 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @booking.tour = @tour
     if @booking.save!
-      redirect_to tour_path(@tour)
+      redirect_to bookings_path
     else
-      render :new
+      render 'tours/show'
     end
   end
 

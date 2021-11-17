@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :tours, only: %i[index show new create] do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[create]
   end
   resources :bookings, only: %i[destroy index]
 end

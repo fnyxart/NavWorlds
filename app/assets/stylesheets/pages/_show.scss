@@ -10,22 +10,25 @@ body {
   margin: 0 auto;
 }
 
-
 #tour-title {
   font-size: 70px;
   font-family: Fjalla One;
 }
 
+#tour-guide-name {
+  font-family: Poppins;
+  font-size: 50px;
+}
+
 #tour-show-image {
- width: 80%;
- height: 450px !important;
- border-radius: 3px;
+ width: 60%;
+ border-radius: 6px;
  margin-top: 10px;
 }
 
 #tour-show-description-title {
   font-family: Poppins;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 #tour-show-description {
