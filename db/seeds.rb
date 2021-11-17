@@ -47,9 +47,9 @@ puts "created tour: '#{wonderland.name}' !"
 narnia = Tour.create(
   user: aslan,
   name: "Narnia",
-  description: "",
+  description: "The mystical world of Narnia is a disc-shaped world (unlike Earth, which is spherical), with the sky like a great dome that met the world around its circumference, on which the other side, and indeed all around the world's edges, is the mysterious land called Aslan's Country.",
   price: (99..999).to_a.sample,
-  photo_url: ""
+  photo_url: "https://narniafans.com/wp-content/uploads/2020/09/narnia-678x381.jpg"
 )
 puts "created tour: '#{narnia.name}' !"
 
