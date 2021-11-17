@@ -1,6 +1,12 @@
-<h1> <%= @tour.name %> </h1>
+<div class="tour-show-container">
+  <h1 id="tour-title"> <%= @tour.name %> </h1>
 
+  <p>
+    <img id="tour-show-image" src='<%= @tour.photo_url%>' style='height:300px'>
+    <p id="tour-show-description-title"><strong>Tour Description</strong>: </p> <p id="tour-show-description"><%= @tour.description %></p>
+    <p id="tour-show-price"> Price: <strong>£<%= @tour.price %></strong></p>
+  </p>
 
-<p> <img src='<%= @tour.photo_url%>' style='height:300px'> <%= @tour.description %> - £<%= @tour.price %> </p>
-
-<%= link_to "Back to all tours", tours_path, class: 'btn btn-secondary' %>
+<%= link_to "Book This Tour", new_tour_booking_path(@tour), class: 'btn-booking btn-secondary' %>
+<%= link_to "Back to all tours", tours_path, class: 'btn-return btn-secondary' %>
+</div>
