@@ -17,16 +17,19 @@ end
 
 # Create 'tour guide' users for demo:
 white_rabbit = User.create(
+  name: "White Rabbit",
   email: "white@rabbit.wld",
   password: "Ra66iT-123"
 )
 
 superman = User.create(
+  name: "Superman",
   email: "super@man.mpl",
   password: "Sup3rMan2000"
 )
 
 aslan = User.create(
+  name: "Aslan",
   email: "aslan@lion.zoo",
   password: "z00k33per"
 )

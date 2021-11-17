@@ -14,7 +14,8 @@ class ToursController < ApplicationController
 
   def create
     # @user = current_user <- replace line below with this after devise is up & running
-    @user = User.find(5)
+    # @user = User.find(5)
+    @user = current_user
     @tour = Tour.new(tour_params)
     @tour.user = @user
     if @tour.save
