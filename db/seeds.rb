@@ -19,16 +19,66 @@ puts "Created #{User.count} users !"
 puts "~~~~~~~~~"
 
 # Create 6 tours with one of the first 6 users as 'guide':
-6.times do
-  user_id = (1..6).to_a.sample
-  tour = Tour.create(
-    user: User.find(user_id),
-    name: Faker::Marketing.buzzwords,
-    description: Faker::Games::WorldOfWarcraft.quote,
-    price: (99..999).to_a.sample,
-    photo_url: "https://source.unsplash.com/random/400x200"
-  )
-  puts "created tour: '#{tour.name}' !"
-end
+tour1 = Tour.create(
+  user: User.find(1),
+  name: "Wonderland",
+  description: "",
+  price: (99..999).to_a.sample,
+  photo_url: ""
+)
+puts "created tour: '#{tour1.name}' !"
+
+
+tour2 = Tour.create(
+  user: User.find(2),
+  name: "Narnia",
+  description: "",
+  price: (99..999).to_a.sample,
+  photo_url: ""
+)
+puts "created tour: '#{tour2.name}' !"
+
+tour3 = Tour.create(
+  user: User.find(3),
+  name: "Narnia",
+  description: "",
+  price: (99..999).to_a.sample,
+  photo_url: ""
+)
+puts "created tour: '#{tour3.name}' !"
+
+tour4 = Tour.create(
+  user: User.find(4),
+  name: "Metropolis",
+  description: "",
+  price: (99..999).to_a.sample,
+  photo_url: ""
+)
+puts "created tour: '#{tour4.name}' !"
+
+tour5 = Tour.create(
+  user: User.find(5),
+  name: "Hell",
+  description: "",
+  price: (99..999).to_a.sample,
+  photo_url: ""
+)
+puts "created tour: '#{tour5.name}' !"
+
+tour6 = Tour.create(
+  user: User.find(6),
+  name: "Mars",
+  description: "",
+  price: (99..999).to_a.sample,
+  photo_url: ""
+)
+puts "created tour: '#{tour5.name}' !"
+
 
 puts "Finished creating #{Tour.count} tours !"
+
+
+
+Metropolis
+Gotham
+Hell
