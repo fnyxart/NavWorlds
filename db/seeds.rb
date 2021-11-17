@@ -103,9 +103,9 @@ puts "created tour: '#{mars.name}' !"
 hell = Tour.create(
   user: hellboy,
   name: "Hell",
-  description: "",
+  description: "In 'A Trip To Hell', you are presented with the breathtaking account of no less than nine people who in hellfire expressed their severe suffering and head-shaking conditions. Are you ready ?!",
   price: (99..999).to_a.sample,
-  photo_url: ""
+  photo_url: "https://images.unsplash.com/photo-1618681317438-a8dd7da06cd4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80"
 )
 puts "created tour: '#{hell.name}' !"
 
@@ -113,9 +113,9 @@ puts "created tour: '#{hell.name}' !"
 gotham = Tour.create(
   user: batman,
   name: "Gotham",
-  description: "",
+  description: "Gotham City is the home of Batman, just as Metropolis is home to Superman, and the two heroes often work together in both cities. During the American Revolutionary War, Gotham City was the site of a major battle (paralleling the real-life Battle of Brooklyn).",
   price: (99..999).to_a.sample,
-  photo_url: ""
+  photo_url: "https://www.denofgeek.com/wp-content/uploads/2015/05/christopher-nolan-dark-knight-gotham-city.jpeg"
 )
 puts "created tour: '#{gotham.name}' !"
 
