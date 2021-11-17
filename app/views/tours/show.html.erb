@@ -1,12 +1,25 @@
 <div class="tour-show-container">
-  <h1 id="tour-title"> <%= @tour.name %> </h1>
+  <h1 id="tour-title"> <%= @tour.name.capitalize %> </h1>
 
   <p>
     <img id="tour-show-image" src='<%= @tour.photo_url%>' style='height:300px'>
-    <p id="tour-show-description-title"><strong>Tour Description</strong>: </p> <p id="tour-show-description"><%= @tour.description %></p>
-    <p id="tour-show-price"> Price: <strong>£<%= @tour.price %></strong></p>
+    <div class="row">
+      <div class="col-8">
+        <% user = User.find(@tour.user_id) %>
+        <p id="tour-guide-name">Tour hosted by <%= user.name %></p>
+        <p id="tour-show-description-title"><strong>Description</strong> </p> <p id="tour-show-description"><%= @tour.description %></p>
+        <p id="tour-show-price"> Price: <strong>£<%= @tour.price %></strong></p>
+      </div>
+      <div class="col-4">
+        <h3>Book this tour</h3>
+        <%= simple_form_for [@tour, @booking] do |f| %>
+          <%= f.date_select :dates %>
+          <br>
+          <br>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
   </p>
 
-<%= link_to "Book This Tour", new_tour_booking_path(@tour), class: 'btn-booking btn-secondary' %>
 <%= link_to "Back to all tours", tours_path, class: 'btn-return btn-secondary' %>
-</div>
