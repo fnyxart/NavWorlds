@@ -40,7 +40,7 @@
               <p style="margin-left: 3px, padding-left: 3px">Signed in as <%= current_user.email %></p>
               <%= link_to "My booked tours", bookings_path, class: "dropdown-item" %>
               <%= link_to "Create a tour", new_tour_path, class: "dropdown-item" %>
-              <%= link_to 'Log out', destroy_user_session_path, class: "dropdown-item" %>
+              <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
             </div>
           <% else %>
             <%= image_tag "https://i1.sndcdn.com/avatars-000623714217-yk5lgi-t500x500.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
