@@ -22,23 +22,46 @@ white_rabbit = User.create(
   email: "white@rabbit.wld",
   password: "Ra66iT-123"
 )
+puts "created user '#{white_rabbit.email}' !"
 
 superman = User.create(
   name: "Superman",
   email: "super@man.mpl",
   password: "Sup3rMan2000"
 )
+puts "created user '#{superman.email}' !"
 
 aslan = User.create(
   name: "Aslan",
   email: "aslan@lion.zoo",
   password: "z00k33per"
 )
+puts "created user '#{aslan.email}' !"
+
+hellboy = User.create(
+  name: "Hellboy",
+  email: "hell@boy.hl",
+  password: "h311b0Y"
+)
+puts "created user '#{hellboy.email}' !"
+
+batman = User.create(
+  name: "Batman",
+  email: "bat@man.ghm",
+  password: "b4tm4n&r0b1n"
+)
+puts "created user '#{batman.email}' !"
+
+matt = User.create(
+  name: "Matt Damon",
+  email: "mattd@mars.mrs",
+  password: "m4ttd4m00n"
+)
 
 puts "Created #{User.count} users !"
 puts "~~~~~~~~~"
 
-# Create 6 tours with one of the first 6 users as 'guide':
+# Create 6 tours:
 wonderland = Tour.create(
   user: white_rabbit,
   name: "Wonderland",
@@ -47,6 +70,7 @@ wonderland = Tour.create(
   photo_url: "https://www.albawaba.com/sites/default/files/styles/default/public/im/wonderland-alice.jpg?itok=xPE8tUDt"
 )
 puts "created tour: '#{wonderland.name}' !"
+
 
 narnia = Tour.create(
   user: aslan,
@@ -57,14 +81,6 @@ narnia = Tour.create(
 )
 puts "created tour: '#{narnia.name}' !"
 
-gotham = Tour.create(
-  user: User.find(3),
-  name: "Gotham",
-  description: "",
-  price: (99..999).to_a.sample,
-  photo_url: ""
-)
-puts "created tour: '#{gotham.name}' !"
 
 metropolis = Tour.create(
   user: superman,
@@ -75,8 +91,17 @@ metropolis = Tour.create(
 )
 puts "created tour: '#{metropolis.name}' !"
 
+mars = Tour.create(
+  user: matt,
+  name: "Mars",
+  description: "The cruise phase begins after the spacecraft separates from the rocket, soon after launch. The spacecraft departs Earth at a speed of about 24,600 mph (about 39,600 kph). The trip to Mars will take about seven months and about 300 million miles (480 million kilometers).",
+  price: 9999,
+  photo_url: "https://images.unsplash.com/photo-1571769267292-e24dfadebbdc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1780&q=80"
+)
+puts "created tour: '#{mars.name}' !"
+
 hell = Tour.create(
-  user: User.find(5),
+  user: hellboy,
   name: "Hell",
   description: "",
   price: (99..999).to_a.sample,
@@ -84,13 +109,15 @@ hell = Tour.create(
 )
 puts "created tour: '#{hell.name}' !"
 
-mars = Tour.create(
-  user: User.find(6),
-  name: "Mars",
-  description: "The cruise phase begins after the spacecraft separates from the rocket, soon after launch. The spacecraft departs Earth at a speed of about 24,600 mph (about 39,600 kph). The trip to Mars will take about seven months and about 300 million miles (480 million kilometers).",
-  price: 9999,
-  photo_url: "https://images.unsplash.com/photo-1571769267292-e24dfadebbdc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1780&q=80"
+
+gotham = Tour.create(
+  user: batman,
+  name: "Gotham",
+  description: "",
+  price: (99..999).to_a.sample,
+  photo_url: ""
 )
-puts "created tour: '#{mars.name}' !"
+puts "created tour: '#{gotham.name}' !"
+
 
 puts "Finished creating #{Tour.count} tours !"
