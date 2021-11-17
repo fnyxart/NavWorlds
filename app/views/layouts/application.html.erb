@@ -12,44 +12,40 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <%= link_to "/", class: "navbar-brand" do %>
+        <h1 id="title", style="padding-top: 20px"><i class="fa fa-globe" aria-hidden="true"></i>NavWorlds</h1>
+      <% end %>
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <h1 id="title", style="padding-top: 20px"><i class="fa fa-globe" aria-hidden="true"></i>NavWorlds</h1>
-  <% end %>
-
-  <div class="collapse navbar-collapse", id="navbarSupportedContent", style="padding-right: 8px">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Home", "/", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "All Tours", tours_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown", style="padding-top: 8px">
-          <% if user_signed_in? %>
-            <%= image_tag "https://avatarfiles.alphacoders.com/456/thumb-1920-45690.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <p style="margin-left: 3px, padding-left: 3px">Signed in as <%= current_user.email %></p>
-              <%= link_to "My booked tours", bookings_path, class: "dropdown-item" %>
-              <%= link_to "Create a tour", new_tour_path, class: "dropdown-item" %>
-              <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
-            </div>
-          <% else %>
-            <%= image_tag "https://i1.sndcdn.com/avatars-000623714217-yk5lgi-t500x500.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to 'Sign up', new_user_registration_path, class: "dropdown-item"%>
-              <%= link_to 'Log in', new_user_session_path, class: "dropdown-item"%>
-            </div>
-          <% end %>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
+      <div class="collapse navbar-collapse", id="navbarSupportedContent", style="padding-right: 8px">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "Home", "/", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "All Tours", tours_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown", style="padding-top: 8px">
+              <% if user_signed_in? %>
+                <%= image_tag "https://avatarfiles.alphacoders.com/456/thumb-1920-45690.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <p style="margin-left: 3px, padding-left: 3px">Signed in as <%= current_user.name %></p>
+                  <%= link_to "My booked tours", bookings_path, class: "dropdown-item" %>
+                  <%= link_to "Create a tour", new_tour_path, class: "dropdown-item" %>
+                  <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+                </div>
+              <% else %>
+                <%= image_tag "https://i1.sndcdn.com/avatars-000623714217-yk5lgi-t500x500.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <%= link_to 'Sign up', new_user_registration_path, class: "dropdown-item"%>
+                  <%= link_to 'Log in', new_user_session_path, class: "dropdown-item"%>
+                </div>
+              <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
 </html>

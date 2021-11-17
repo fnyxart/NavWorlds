@@ -13,6 +13,7 @@
 
 .navbar {
   border-bottom: 2px solid black;
+  // margin-top: 0px;
   // position: fixed;
   // top: 0;
   // width: 100%;
@@ -25,4 +26,8 @@
   font-size: 24px;
   position: relative;
   left: -30px;
+}
+
+.nav-link:hover {
+  color: #F58F29 !important;
 }
