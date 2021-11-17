@@ -9,6 +9,7 @@
 # Create 15 random users:
 15.times do
   user = User.create(
+    name: Faker::Name.first_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 10, max_length: 20)
   )
