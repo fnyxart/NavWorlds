@@ -1,9 +1,14 @@
 <h1> All Tours </h1>
 
-<ul id="index-list">
-  <% @tours.each do |tour| %>
-  <li class="list-item"><%=tour.name%> - <img src='<%=tour.photo_url %>' style='height:100px'> - <%= link_to 'See Details', tour_path(tour) %> </li>
-  <% end %>
-</ul>
-
-<%= link_to "Add a new tour", new_tour_path, class: 'btn btn-primary' %>
+<% @tours.each do |tour| %>
+<div class="card-product" id="index-list">
+  <img src='<%= tour.photo_url %>' >
+  <div class="card-product-infos">
+    <h2><%= tour.name %></h2>
+    <p><%= link_to 'See Details', tour_path(tour) %></p>
+  </div>
+</div>
+<% end %>
+<div class="btn-container">
+<%= link_to "Host a new tour", new_tour_path, class: 'btn btn-primary' %>
+</div>
