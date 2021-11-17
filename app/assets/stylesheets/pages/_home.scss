@@ -22,6 +22,13 @@ border: 2px solid black;
 border-radius: 3px;
 }
 
+.home-page-container {
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2017%2F03%2Frsz_shutterstock_310093031-e1489424931357.jpg&f=1&nofb=1');
+  height: 1000px;
+  width: 100%;
+  background-size:cover;
+}
+
 #search-bar {
 position: relative;
 width: 80%;
