@@ -1,5 +1,5 @@
-<ul>
+<ul id="booking-list">
   <% @bookings.each do |b| %>
-    <li><%= b.tour.name %></li>
+    <li class="booking-entry"><%= link_to "#{b.tour.name}", tour_path(b.tour)%> on: <%= b.dates %> <br> Hosted by: <%= b.tour.user.name %></li>
   <% end %>
 </ul>
