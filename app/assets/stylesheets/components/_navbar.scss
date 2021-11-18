@@ -11,6 +11,14 @@
   width: 20px;
 }
 
+#title {
+font-family: $logo-font;
+color: white;
+font-size: 40px;
+position: relative;
+left: 15px;
+}
+
 .navbar {
   border-bottom: 2px solid black;
   // margin-top: 0px;
