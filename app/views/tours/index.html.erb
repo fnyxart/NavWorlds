@@ -4,9 +4,9 @@
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find a Tour"
+    placeholder: "Find the perfect tour - filter by Tour Name, Description, Host Name or Price!"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Show Tours", class: "btn btn-primary" %>
 <% end %>
 
 <% @tours.each do |tour| %>
@@ -14,7 +14,7 @@
   <img src='<%= tour.photo_url %>' >
   <div class="card-product-infos">
     <h2><%= tour.name %></h2>
-    <p><%= link_to 'See Details', tour_path(tour) %></p>
+    <p><%= link_to 'more about this tour', tour_path(tour) %></p>
   </div>
 </div>
 <% end %>
