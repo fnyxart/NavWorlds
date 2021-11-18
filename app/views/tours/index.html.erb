@@ -1,14 +1,24 @@
-<h1> All Tours </h1>
+<h1> Find A World For YOU!</h1>
+
+<%= form_tag tours_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find the perfect tour - filter by Tour Name, Description, Host Name or Price!"
+  %>
+  <%= submit_tag "Show Tours", class: "btn btn-primary" %>
+<% end %>
 
 <% @tours.each do |tour| %>
 <div class="card-product" id="index-list">
   <img src='<%= tour.photo_url %>' >
   <div class="card-product-infos">
     <h2><%= tour.name %></h2>
-    <p><%= link_to 'See Details', tour_path(tour) %></p>
+    <p><%= link_to 'more about this tour', tour_path(tour) %></p>
   </div>
 </div>
 <% end %>
+
 <div class="btn-container">
 <%= link_to "Host a new tour", new_tour_path, class: 'btn btn-primary' %>
 </div>
