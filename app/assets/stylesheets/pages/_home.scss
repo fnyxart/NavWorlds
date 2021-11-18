@@ -1,17 +1,9 @@
 // Specific CSS for your home-page
-body {
-background-color: rgb(19, 44, 51);
-margin: 0;
-padding: 0;
-}
-
-#title {
-font-family: Cinzel, sans-serif;
-color: white;
-font-size: 40px;
-position: relative;
-left: 15px;
-}
+// body {
+// background-color: rgb(19, 44, 51);
+// margin: 0;
+// padding: 0;
+// }
 
 // .container {
 // background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2017%2F03%2Frsz_shutterstock_310093031-e1489424931357.jpg&f=1&nofb=1');
@@ -22,14 +14,12 @@ left: 15px;
 // border-radius: 3px;
 // }
 
-.home-page-container {
-  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2017%2F03%2Frsz_shutterstock_310093031-e1489424931357.jpg&f=1&nofb=1');
-  height: 500px;
-  width: 100%;
-  object-fit: cover;
+.home-banner {
+  background-image: url('https://images.unsplash.com/photo-1633086218123-e368e0e71443?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2123&q=80');
+  background-size: cover;
 }
 
-#book-tour {
-  position: relative;
-  width: 50%;
-}
+// #book-tour {
+//   position: relative;
+//   width: 50%;
+// }
