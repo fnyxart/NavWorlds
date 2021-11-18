@@ -24,23 +24,28 @@ left: 15px;
 
 .home-page-container {
   background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn01.dailycaller.com%2Fwp-content%2Fuploads%2F2017%2F03%2Frsz_shutterstock_310093031-e1489424931357.jpg&f=1&nofb=1');
-  height: 1000px;
+  height: 500px;
   width: 100%;
-  background-size:cover;
+  object-fit: cover;
 }
 
-#search-bar {
-position: relative;
-width: 80%;
-padding-left: 5px;
-border-radius: 2px;
-left: 10%;
-top: 43%;
-height: 40px;
-font-size: 25px;
-}
+// #search-bar {
+// position: relative;
+// width: 80%;
+// padding-left: 5px;
+// border-radius: 2px;
+// left: 10%;
+// top: 43%;
+// height: 40px;
+// font-size: 25px;
+// }
 
-#search-button {
-  z-index: 5;
-  display: none;
+// #search-button {
+//   z-index: 5;
+//   display: none;
+// }
+
+#book-tour {
+  position: relative;
+  width: 50%;
 }
