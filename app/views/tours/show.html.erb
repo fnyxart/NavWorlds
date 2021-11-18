@@ -14,14 +14,18 @@
         <p id="tour-show-description-title"><strong>Description</strong> </p> <p id="tour-show-description"><%= @tour.description %></p>
         <p id="tour-show-price"> Price: <strong>£<%= @tour.price %></strong></p>
       </div>
-      <div class="col-4">
-        <h3>Book this tour</h3>
-        <%= simple_form_for [@tour, @booking] do |f| %>
-          <%= f.date_select :dates %>
-          <br>
-          <br>
-          <%= f.submit %>
-        <% end %>
+      <div class="booking-card">
+        <div class="booking-card-items">
+          <h3 class="booking-card-title">Book this tour</h3>
+          <%= simple_form_for [@tour, @booking] do |f| %>
+            <div>
+              <%= f.date_select :dates %>
+              <br>
+              <br>
+              <%= f.submit %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </p>
