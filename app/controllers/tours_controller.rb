@@ -3,7 +3,7 @@ class ToursController < ApplicationController
   def index
     @tours = Tour.all
     if params[:query].present?
-      @tours = Tour.where(name: params[:query])
+      @tours = Tour.global_search(params[:query])
     else
       @tours = Tour.all
     end

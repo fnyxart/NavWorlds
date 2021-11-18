@@ -8,7 +8,7 @@ class Tour < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :name, :description ],
+    against: [ :name, :description, :price ],
     associated_against: {
       user: :name
     },
