@@ -22,4 +22,16 @@
     </div>
   </p>
 
-<%= link_to "Back to all tours", tours_path, class: 'btn-return btn-secondary' %>
+  <%= link_to "Back to all tours", tours_path, class: 'btn-return btn-secondary' %>
+
+  <div class="container">
+    <h1 id="review-title">Reviews</h1>
+    <div class="row">
+      <div class="col-8">
+        <% @tour.bookings.each do |booking| %>
+        <%= booking.reviews.first.content %>
+        <%= booking.reviews.first.rating %>
+        <% end %>
+      </div>
+    </div>
+  </div>
