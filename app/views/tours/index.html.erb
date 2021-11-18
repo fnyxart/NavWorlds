@@ -11,7 +11,11 @@
 
 <% @tours.each do |tour| %>
 <div class="card-product" id="index-list">
-  <img src='<%= tour.photo_url %>' >
+  <% if tour.photo.attached? %>
+    <%= cl_image_tag tour.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <img src='<%= tour.photo_url %>' >
+  <% end %>
   <div class="card-product-infos">
     <h2><%= tour.name %></h2>
     <p><%= link_to 'more about this tour', tour_path(tour) %></p>
