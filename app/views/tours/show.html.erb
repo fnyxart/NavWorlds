@@ -2,11 +2,7 @@
   <h1 id="tour-title"> <%= @tour.name.capitalize %> </h1>
 
   <p>
-  <% if @tour.photo.attached? %>
-    <%= cl_image_tag @tour.photo.key, crop: :fill %>
-  <% else %>
-    <img id="tour-show-image" src='<%= @tour.photo_url%>'>
-  <% end %>
+    <img id="tour-show-image" src='<%= @tour.photo_url%>' style='height:300px'>
     <div class="row">
       <div class="col-8">
         <% user = User.find(@tour.user_id) %>
