@@ -2,6 +2,11 @@ class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
+    # if params[:query].present?
+    #   @movies = Tour.where(title: params[:query])
+    # else
+    #   @movies = Tour.all
+    # end
   end
 
   def show
@@ -14,8 +19,6 @@ class ToursController < ApplicationController
   end
 
   def create
-    # @user = current_user <- replace line below with this after devise is up & running
-    # @user = User.find(5)
     @user = current_user
     @tour = Tour.new(tour_params)
     @tour.user = @user
