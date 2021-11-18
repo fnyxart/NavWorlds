@@ -1,0 +1,59 @@
+.container-show {
+  border: 2px solid black;
+  margin-top: 50px;
+  padding: 35px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px grey;
+  height: 580px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: Fjalla One;
+  font-size: 60px;
+}
+
+.content {
+  position: relative;
+  bottom: 110px;
+  left: 10px;
+  font-size: 30px;
+  width: 88%;
+}
+
+.content-text {
+  padding-top: 3px;
+}
+
+.rating {
+  position: relative;
+  bottom: 80px;
+  left: 10px;
+  font-size: 30px;
+  width: 88%;
+}
+
+.submit-div {
+  position: relative;
+  bottom: 10px;
+  left: 12px;
+  font-size: 20px;
+  width: 90%;
+  border: none;
+  border-radius: 3px;
+}
+
+.submit-btn {
+  border-radius: 0px;
+  height: 60px;
+  padding: 3px;
+  width: 20%;
+  background-color: rgba(53, 177, 202, 0.5);
+}

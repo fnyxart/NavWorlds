@@ -1,8 +1,8 @@
-<div class="col-4">
-  <h1>Add a review</h1>
+<div class="container-show">
+  <h1 class="title">Add a review for your tour of <%=@booking.tour.name%> with <%= @booking.tour.user.name %></h1>
   <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :content, as: :text %>
-    <%= f.input :rating, collection: 0..5, as: :select %>
-    <%= f.submit %>
+   <div class="content"> <%= f.input :content, as: :text, placeholder: 'Tell us about your experience...', class: 'content-text' %> </div>
+   <div class="rating"> <%= f.input :rating, collection: 0..5, as: :select %> </div>
+   <div class="submit-div"> <%= f.submit class: 'submit-btn'%> </div>
   <% end %>
 </div>
