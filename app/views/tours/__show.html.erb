@@ -1,0 +1,41 @@
+<div class="tour-show-container">
+  <h1 id="tour-title"> <%= @tour.name.capitalize %> </h1>
+
+  <p>
+    <% if @tour.photo.attached? %>
+      <%= cl_image_tag @tour.photo.key, crop: :fill %>
+    <% else %>
+      <img id="tour-show-image" src='<%= @tour.photo_url%>' style='height:300px'>
+    <% end %>
+    <div class="row">
+      <div class="col-8">
+        <% user = User.find(@tour.user_id) %>
+        <p id="tour-guide-name">Tour hosted by <%= user.name %></p>
+        <p id="tour-show-description-title"><strong>Description</strong> </p> <p id="tour-show-description"><%= @tour.description %></p>
+        <p id="tour-show-price"> Price: <strong>£<%= @tour.price %></strong></p>
+      </div>
+      <div class="col-4">
+        <h3>Book this tour</h3>
+        <%= simple_form_for [@tour, @booking] do |f| %>
+          <%= f.date_select :dates %>
+          <br>
+          <br>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </p>
+
+  <%= link_to "Back to all tours", tours_path, class: 'btn-return btn-secondary' %>
+
+  <div class="container">
+    <h1 id="review-title">Reviews</h1>
+    <div class="row">
+      <div class="col-8">
+        <% @tour.bookings.each do |booking| %>
+        <%= booking.reviews.first.content %>
+        <%= booking.reviews.first.rating %>
+        <% end %>
+      </div>
+    </div>
+  </div>
