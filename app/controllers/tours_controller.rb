@@ -2,11 +2,11 @@ class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
-    # if params[:query].present?
-    #   @movies = Tour.where(title: params[:query])
-    # else
-    #   @movies = Tour.all
-    # end
+    if params[:query].present?
+      @tours = Tour.where(name: params[:query])
+    else
+      @tours = Tour.all
+    end
   end
 
   def show
