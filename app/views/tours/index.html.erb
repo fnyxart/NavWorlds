@@ -1,12 +1,12 @@
 <h1> Find A World For YOU!</h1>
 
-<%= form_tag tours_path, method: :get do %>
+<%= form_tag tours_path, method: :get, class: 'form-inline' do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "form-control flex-grow-1",
     placeholder: "Find the perfect tour - filter by Tour Name, Description, Host Name or Price!"
   %>
-  <%= submit_tag "Show Tours", class: "btn btn-primary" %>
+  <%= submit_tag "Show Tours", class: "btn btn-flat" %>
 <% end %>
 
 <% @tours.each do |tour| %>
