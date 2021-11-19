@@ -1,14 +1,6 @@
-<h1> Find A World For YOU!</h1>
-
-<%= form_tag tours_path, method: :get, class: 'form-inline' do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control flex-grow-1",
-    placeholder: "Find the perfect tour - filter by Tour Name, Description, Host Name or Price!"
-  %>
-  <%= submit_tag "Find", class: "button-search" %>
-<% end %>
-
+<div class="w-100 vh-50 d-flex justify-content-center align-items-center">
+<h1 style="margin-top: 10px"> Explore our worlds!</h1>
+</div>
 
 <%# tours.each loop %>
 <% @tours.each do |tour| %>

@@ -8,8 +8,8 @@ body {
 
 
 .button-search {
-  min-width: 15vmax;
-  min-height: 2vmax;
+  min-width: 5vmax;
+  min-height: 1vmax;
   font-family: 'Popins', sans-serif;
   font-size: 18px;
   text-transform: uppercase;
@@ -19,7 +19,7 @@ body {
   background: #4FD1C5;
   background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
   border: none;
-  border-radius: 5px;
+  border-radius: 100px;
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
   outline: none;
