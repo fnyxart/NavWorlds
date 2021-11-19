@@ -6,7 +6,7 @@
         <%= simple_form_for [@booking, @review] do |f| %>
           <%= f.input :content, as: :text %>
           <%= f.input :rating, collection: 0..5, as: :select %>
-          <%= f.submit %>
+          <%= f.submit class:'btn btn-nw-primary'%>
         <% end %>
       </div>
     </div>
