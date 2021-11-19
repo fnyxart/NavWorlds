@@ -9,7 +9,7 @@ body {
 
 .tour-show-container {
   width: 90%;
-  height: auto;
+  height: 870px;
   color: #222222;
 }
 
@@ -48,17 +48,20 @@ body {
   border-top-style: solid !important;
   border-top-color: rgb(201, 196, 196);
 }
-.btn-booking, .booking-select {
+.btn-booking {
   width: 100%;
   align-self: center;
+  border-radius: 3px;
 }
 
 #booking_dates_1i, #booking_dates_3i {
-  width: 18%;
+  width: 19%;
+  border-radius: 3px;
 }
 
 #booking_dates_2i {
-   width: 60%;
+  width: 59%;
+  border-radius: 3px;
 }
 
 .container-2 {
@@ -139,6 +142,7 @@ body {
 .review-card-rating {
   font-size: 25px;
   margin: 0 auto;
+  margin-bottom: 20px;
   font-weight: bolder;
 }
 
