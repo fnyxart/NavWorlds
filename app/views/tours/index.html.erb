@@ -7,9 +7,9 @@
     class: "form-control flex-grow-1",
     placeholder: "Find the perfect tour - filter by Tour Name, Description, Host Name or Price!"
   %>
-  <%= submit_tag "Show Tours", class: "btn btn-flat" %>
+  <%= submit_tag "Show Tours", type: "button", class: "btn btn-nw-secondary" %>
 <% end %>
-<%= link_to "Host a new tour", new_tour_path, class: 'btn btn-primary' %>
+<%= link_to "Host a new tour", new_tour_path, class: 'btn btn-nw-primary' %>
 <%# add card grid here - around the cards logic %>
 <div class="cards">
 <%# tours.each loop %>
