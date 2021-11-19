@@ -6,29 +6,26 @@ body {
   background-color: rgb(216,227,237);
 }
 
-#index-list {
-  position: relative;
-  top: 150px;
-}
 
-.btn-container {
+.button-search {
+  min-width: 5vmax;
+  min-height: 1vmax;
+  font-family: 'Popins', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+  background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
   position: relative;
-  top: -920px;
-  left: 30px;
-  width: 200px;
-  height: 40px;
-}
-
-.btn {
-  position: relative;
-  width: 200px;
-  height: 55px;
-  background-color: rgb(40,167,69);
-  font-family: Fjalla One;
-  border-radius: 3px;
-  padding-top: 13px;
-  font-size: 20px;
-}
+  padding: 10px;
+  }
 
 .list-item {
   margin-top: 40px;
