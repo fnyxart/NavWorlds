@@ -1,3 +1,5 @@
+<% tour_reviews = @tour.reviews.count %>
+
 <div class="tour-show-container">
   <h1 id="tour-title"> <%= @tour.name.capitalize %></h1>
   <div class="booking-card-rating">
@@ -10,9 +12,9 @@
         <% counter %>
       <% end %>
       <i class="fas fa-star"></i>
-      <%= (counter/Review.count) %>
+      <%= (counter/tour_reviews) unless tour_reviews.zero? %>
     </span>
-    <span class="review-number">(<%= Review.count %> reviews)</span>
+    <span class="review-number">(<%= tour_reviews %> reviews)</span>
   </div>
 
   <p>
@@ -37,17 +39,17 @@
             <span class="booking-card-rating">
               <span class= "review-average-rating">
                 <i class="fas fa-star"></i>
-                <%= (counter/Review.count) %>
+                <%= (counter/tour_reviews) unless tour_reviews.zero? %>
               </span>
-                <span class="review-number">(<%= Review.count %> reviews)</span>
+                 <span class="review-number">(<%= tour_reviews %> reviews)</span>
             </span>
           </div>
           <%= simple_form_for [@tour, @booking] do |f| %>
-            <div>
-              <%= f.date_select :dates %>
+            <div class="form-inputs w-100">
+              <%= f.date_select :dates, class: "booking-select" %>
               <br>
               <br>
-              <%= f.submit %>
+              <%= f.submit class: 'btn btn-nw-primary btn-booking' %>
             </div>
           <% end %>
           <div class= booking-price-container>
@@ -73,9 +75,9 @@
   <div class="review-card-rating">
     <span class= "review-average-rating">
       <i class="fas fa-star"></i>
-      <%= (counter/Review.count) %>
+      <%= (counter/tour_reviews) unless tour_reviews.zero? %>
     </span>
-    <span class="review-card-review-number">· <%= Review.count %> reviews</span>
+    <span class="review-card-review-number">· <%= tour_reviews %> reviews</span>
   </div>
   <div>
     <div class="review-container-item">
@@ -89,5 +91,3 @@
     </div>
   </div>
 </div>
-
-<%= link_to "Back to all tours", tours_path, class: 'btn-return btn-secondary' %>

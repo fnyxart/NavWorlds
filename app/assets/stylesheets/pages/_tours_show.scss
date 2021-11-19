@@ -19,10 +19,6 @@ body {
   margin-top: 30px;
 }
 
-// #tour-guide-name {
-//   font-size: 50px;
-// }
-
 #tour-show-image {
  width: 90%;
  height: 400px;
@@ -52,38 +48,18 @@ body {
   border-top-style: solid !important;
   border-top-color: rgb(201, 196, 196);
 }
+.btn-booking, .booking-select {
+  width: 100%;
+  align-self: center;
+}
 
-// .btn-booking {
-//   position: absolute;
-//   width: 170px;
-//   height: 65px;
-//   background-color: rgb(255,192,7);
-//   text-align: center;
-//   margin-left: 2px;
-//   padding-top: 18px;
-//   border-radius: 3px;
-//   font-size: 20px;
-//   color: black;
-//   font-weight: 600;
-//   font-family: Fjalla One;
-//   bottom: 170px;
-// }
+#booking_dates_1i, #booking_dates_3i {
+  width: 18%;
+}
 
-// .btn-return {
-//   background-color: rgb(1,123,254);
-//   position: absolute;
-//   width: 170px;
-//   height: 65px;
-//   text-align: center;
-//   margin-left: 2px;
-//   padding-top: 18px;
-//   border-radius: 3px;
-//   font-size: 20px;
-//   color: black;
-//   font-weight: 600;
-//   font-family: Fjalla One;
-//   bottom: 60px;
-// }
+#booking_dates_2i {
+   width: 60%;
+}
 
 .container-2 {
   display: flex !important;
@@ -96,7 +72,6 @@ body {
   display: inline-block;
   vertical-align: middle
 }
-
 
 .booking-container {
   background: white;
@@ -150,7 +125,6 @@ body {
 }
 
 .review-container {
-  margin-top: -82px;
   width: 90%;
 }
 
@@ -164,7 +138,7 @@ body {
 
 .review-card-rating {
   font-size: 25px;
-  margin-bottom: 20px;
+  margin: 0 auto;
   font-weight: bolder;
 }
 
