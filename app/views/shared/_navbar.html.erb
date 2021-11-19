@@ -6,7 +6,7 @@
   <% end %>
 
 <%# NAVBAR SEARCH %>
-<div>
+<div class=" <%= yield(:search_bar_home) %>">
   <%= form_tag tours_path, method: :get, class: 'form-inline' do %>
     <%= text_field_tag :query,
       params[:query],
