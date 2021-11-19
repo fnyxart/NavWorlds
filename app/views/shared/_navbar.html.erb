@@ -6,16 +6,16 @@
   <% end %>
 
 <%# NAVBAR SEARCH %>
-<div class="nav-item">
-    <%= form_tag tours_path, method: :get, class: 'form-inline' do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control flex-grow-2",
-    placeholder: "Find the perfect world...",
-    style: "padding: 10px"
-  %>
-  <%= submit_tag "Find", class: "button-search" %>
-<% end %>
+<div>
+  <%= form_tag tours_path, method: :get, class: 'form-inline' do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a new world...",
+      style: "padding: 10px"
+    %>
+  <%= submit_tag "Find", class: "btn btn-nw-primary" %>
+  <% end %>
 </div>
 
 
