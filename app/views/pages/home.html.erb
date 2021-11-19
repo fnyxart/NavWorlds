@@ -1,9 +1,19 @@
 <%# Banner image %>
-<div class="home-banner w-100 vh-100 d-flex justify-content-center
-      align-items-center">
+<%= content_for(:navbar_class, 'nav-bar-home') %>
+<section class="video">
+<%= video_tag "bkg-video.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "video-background" %>
+
+<div class="w-100 vh-100 d-flex justify-content-center align-items-center">
+<%# class="home-banner w-100 vh-100 d-flex justify-content-center %>
+      <%# align-items-center" %>
   <div class="content text-center">
-    <h2 class="text-white">Welcome to NavWorlds</h2>
-    <h3 class="text-white">Where other worlds are just a click away!</h3>
-    <%= link_to "Book A Tour!", tours_path, class: "btn-hamepage" %>
+    <div class="text-wrap">
+      <h2 class="text-white hero-title">Welcome to NavWorlds</h2>
+      <h3 class="hero-text">Where other worlds are just a click away!</h3>
+    </div>
+    <div class="wrap">
+      <button class="button" onclick="location.href='/tours'" type="button">Book a tour</button>
+    </div>
   </div>
 </div>
+</section>

@@ -1,13 +1,13 @@
-.navbar-lewagon {
+.navbar-navworlds {
   justify-content: space-between;
-  background: rgb(19, 44, 51)
+  background: rgb(19, 44, 51);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-navworlds .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-navworlds .navbar-brand img {
   width: 20px;
 }
 
@@ -38,4 +38,17 @@ left: 15px;
 
 .nav-link:hover {
   color: #F58F29 !important;
+}
+
+
+.nav-bar-home {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  border-bottom: 0px;
+}
+
+.sign-in-nav-dropdown {
+  color:rgb(19, 44, 51) !important;
+  font-weight: 700;
 }
