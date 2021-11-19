@@ -1,6 +1,9 @@
-<div class="container">
-<h1> Find A World For YOU!</h1>
+<div class="w-100 d-flex justify-content-center align-items-center" style="padding: 20px">
+<h1> Explore our worlds!</h1>
+</div>
 
+<<<<<<< HEAD
+=======
 <%= form_tag tours_path, method: :get, class: 'form-inline' do %>
   <%= text_field_tag :query,
     params[:query],
@@ -12,6 +15,7 @@
 <%= link_to "Host a new tour", new_tour_path, class: 'btn btn-nw-primary' %>
 <%# add card grid here - around the cards logic %>
 <div class="cards">
+>>>>>>> master
 <%# tours.each loop %>
 <% @tours.each do |tour| %>
 
@@ -32,5 +36,3 @@
   <% end %>
 
 <% end %>
-</div>
-</div>
