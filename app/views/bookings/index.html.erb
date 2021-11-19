@@ -9,6 +9,8 @@
         <br>
         <div class="tour-title"><%= link_to "#{b.tour.name}", tour_path(b.tour)%> <span class="host"> - Hosted by: <%= b.tour.user.name %> </span></div>
       </div>
-      <div class='review-btn'><%= link_to 'Review this booking', new_booking_review_path(b) if b.reviews.count == 0 %></div>
+      <% if b.reviews.count == 0 %>
+      <div class='review-btn'><%= link_to 'Review this booking', new_booking_review_path(b), class: 'btn btn-nw-primary' %></div>
+      <% end  %>
     </div>
   <% end %>
