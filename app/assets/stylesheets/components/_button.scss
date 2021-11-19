@@ -1,0 +1,21 @@
+.btn-nw-primary {
+  background-color: $b-butt;
+  color: $b-butt-h;
+  transition: opacity .4s ease, background .2s ease-out;
+}
+
+.btn-nw-primary:hover {
+  background-color: $b-butt-h;
+  color: $w-text;
+}
+
+.btn-nw-secondary {
+  border: 1px solid $b-butt;
+  transition: opacity .4s ease, background .2s ease-out;
+}
+
+.btn-nw-secondary:hover {
+  border: 1px solid $b-butt-h;
+
+  color: $b-butt-h;
+}
