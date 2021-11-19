@@ -15,7 +15,7 @@
           <% if user_signed_in? %>
             <%= image_tag "https://images.squarespace-cdn.com/content/v1/59be7a71c027d88b27dbe22b/1511969188284-O8YMUWKODZGE7UEWKQSF/small+header.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <p class= "dropdown-item">Signed in as <%= current_user.name %></p>
+              <p class= "dropdown-item disabled sign-in-nav-dropdown">Signed in as <%= current_user.name %></p>
               <%= link_to "My booked tours", bookings_path, class: "dropdown-item" %>
               <%= link_to "Create a tour", new_tour_path, class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
