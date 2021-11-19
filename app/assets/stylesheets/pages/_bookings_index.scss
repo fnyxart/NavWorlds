@@ -32,9 +32,14 @@
   border-radius: 3px;
 }
 
+.date-title {
+  position: relative;
+  width: 40%;
+  margin-left: 5px;
+}
+
 .booking-date {
   position: relative;
-  left: 15px;
   top: 5px;
   font-size: 25px;
   color: grey;
@@ -52,7 +57,6 @@
 
 .tour-title {
   position: absolute;
-  left: 249px;
   top: 63px;
   font-size: 30px;
 }
