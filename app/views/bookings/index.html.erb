@@ -1,8 +1,11 @@
-<ul id="booking-list">
+<div id="page-title"><h1>My Booked Tours:</h1></div>
+
   <% @bookings.each do |b| %>
-    <li class="booking-entry"><%= link_to "#{b.tour.name}", tour_path(b.tour)%>
-    on: <%= b.dates %> <br> Hosted by: <%= b.tour.user.name %>
-    <%= link_to 'Add a review', new_booking_review_path(b), class: 'btn btn-primary' if b.reviews.count == 0 %>
-    </li>
+    <div class="booking-entry">
+      <div class="booking-img"><img src="<%= b.tour.photo_url%>" class="tour-img"></div>
+      <span class='booking-date'><%= b.dates.strftime("#{b.dates.day.ordinalize} %B %Y") %> </span>
+      <br>
+      <div class="tour-title"><%= link_to "#{b.tour.name}", tour_path(b.tour)%> <span class="host"> - Hosted by: <%= b.tour.user.name %> </span></div>
+      <div class='review-btn'><%= link_to 'Review this booking', new_booking_review_path(b) if b.reviews.count == 0 %> </div>
+    </div>
   <% end %>
-</ul>

@@ -1,9 +1,69 @@
-#booking-list {
-  margin-top: 50px;
+#page-title {
+  position: relative;
+  top: 22px;
+  left: 10px;
+  text-align: center;
 }
 
+#booking-list {
+  margin-top: 50px;
+  list-style: none;
+  border: 1px solid black;
+  position: relative;
+}
+
+.booking-entry {
+  display: flex;
+  margin-top: 80px;
+  border: 1px solid rgba(255,255,255, 0.4);
+  box-shadow: 1px 1px 5px grey;
+  position: relative;
+  left: 8px;
+  height: 130px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+}
+
+.booking-img {
+  height: 100%;
+  width: 20%;
+  border-radius: 3px;
+}
+
+.booking-date {
+  position: relative;
+  left: 15px;
+  top: 5px;
+  font-size: 25px;
+  color: grey;
+}
+
+.tour-img {
+  height: 100%;
+  width: 100%;
+}
 
 .booking-entry {
   font-size: 35px;
   font-family: Varela Round;
+}
+
+.tour-title {
+  position: absolute;
+  left: 249px;
+  top: 63px;
+  font-size: 30px;
+}
+
+.host {
+  font-size: 25px;
+}
+
+.review-btn {
+  position: absolute;
+  right: 35px;
+  top: 40px;
+  font-size: 30px;
 }
