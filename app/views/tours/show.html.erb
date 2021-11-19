@@ -2,36 +2,49 @@
   <h1 id="tour-title"> <%= @tour.name.capitalize %> </h1>
 
   <p>
-    <img id="tour-show-image" src='<%= @tour.photo_url%>' style='height:300px'>
-    <div class="row">
-      <div class="col-8">
+    <% if @tour.photo.attached? %>
+      <%= cl_image_tag @tour.photo.key, crop: :fill %>
+    <% else %>
+      <img id="tour-show-image" src='<%= @tour.photo_url%>' style=''>
+    <% end %>
+    <div class="container-2">
+      <div class="item-container-2">
         <% user = User.find(@tour.user_id) %>
         <p id="tour-guide-name">Tour hosted by <%= user.name %></p>
         <p id="tour-show-description-title"><strong>Description</strong> </p> <p id="tour-show-description"><%= @tour.description %></p>
-        <p id="tour-show-price"> Price: <strong>£<%= @tour.price %></strong></p>
       </div>
-      <div class="col-4">
-        <h3>Book this tour</h3>
-        <%= simple_form_for [@tour, @booking] do |f| %>
-          <%= f.date_select :dates %>
-          <br>
-          <br>
-          <%= f.submit %>
-        <% end %>
+      <div class="item-container-2">
+        <div class="booking-container">
+          <h3 id="booking-card-title">Book this tour</h3>
+          <p id="tour-show-price"> Price: <strong>£<%= @tour.price %></strong></p>
+          <%= simple_form_for [@tour, @booking] do |f| %>
+            <div>
+              <%= f.date_select :dates %>
+              <br>
+              <br>
+              <%= f.submit %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </p>
 
   <%= link_to "Back to all tours", tours_path, class: 'btn-return btn-secondary' %>
 
-  <div class="container">
-    <h1 id="review-title">Reviews</h1>
-    <div class="row">
-      <div class="col-8">
+  <div class="review-container">
+    <h1 class="review-title">Reviews</h1>
+    <div class="">
+      <div class="">
         <% @tour.bookings.each do |booking| %>
-        <%= booking.reviews.first.content %>
-        <%= booking.reviews.first.rating %>
+          <% if booking.reviews.present? %>
+            <% user = User.find(booking.user_id) %>
+            <p><%= user.name %> said:</p>
+            <p><%= booking.reviews.first.content %></p>
+            <p>Rating: <%= booking.reviews.first.rating %>/5</p>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
+</div>
