@@ -114,8 +114,8 @@
 button::before {
 content: '';
   border-radius: 1000px;
-  min-width: calc(25vmax + 12px);
-  min-height: calc(4.5vmax + 12px);
+  min-width: calc(25vmax + 1vmax);
+  min-height: calc(4.5vmax + 1vmax);
   border: 1px solid #00FFCB;
   box-shadow: 0 0 5px #e2e7e7, 0 0 20px #3fbecf, 0 0 30px #62beca, 0 0 60px #73c0ca, 0 0 100px #9dc7cc;
   position: absolute;
