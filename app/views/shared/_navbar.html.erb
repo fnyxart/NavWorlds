@@ -1,21 +1,27 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-navworlds <%= yield(:navbar_class) %>">
+
+<%# NAVBAR LOGO %>
   <%= link_to "/", class: "navbar-brand" do %>
     <h1 id="title", style="padding-top: 20px"><i class="fa fa-globe" aria-hidden="true"></i>NavWorlds</h1>
   <% end %>
 
+<%# NAVBAR SEARCH %>
+<div>
+  <%= form_tag tours_path, method: :get, class: 'form-inline' do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a new world...",
+      style: "padding: 10px"
+    %>
+  <%= submit_tag "Find", class: "btn btn-nw-primary" %>
+  <% end %>
+</div>
+
+
+<%# NAVBAR LINKS LIST %>
   <div class="collapse navbar-collapse", id="navbarSupportedContent", style="padding-right: 8px">
     <ul class="navbar-nav navbar-right">
-    <li class="nav-item" style="padding-right: 20px">
-    <%= form_tag tours_path, method: :get, class: 'form-inline' do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control flex-grow-2",
-    placeholder: "Find the perfect tour - filter by Tour Name, Description, Host Name or Price!"
-  %>  </li>
-  <li class="nav-item" style="padding-right: 100px">
-  <%= submit_tag "Find", class: "button-search" %>
-  </li>
-<% end %>
     <li class="nav-item"></li>
       <li class="nav-item px-3">
         <%= link_to "Home", "/", class: "nav-link" %>
