@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h3>Add a review for your tour of <b><%= @booking.tour.name %></b> with <b><%= @booking.user.name %></b></h3>
+        <h3>Add a review for your tour of <b><%= @booking.tour.name %></b> with <b><%= @booking.tour.user.name %></b></h3>
         <%= simple_form_for [@booking, @review] do |f| %>
           <%= f.input :content, as: :text %>
           <%= f.input :rating, collection: 0..5, as: :select %>
