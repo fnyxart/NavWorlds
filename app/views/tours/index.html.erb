@@ -2,23 +2,20 @@
 <h1> Explore other worlds!</h1>
 </div>
 
-<%# add card grid here - around the cards logic %>
-<div class="cards">
 
 <%# tours.each loop %>
 <% @tours.each do |tour| %>
 
-<%# cloudinary logic first: %>
+<%# check if image available on cloudinary: %>
   <% if tour.photo.attached? %>
-  <%# need to test if a card category can be built as or with image tag %>
 
-<%# then create the right card container per card -> card-category %>
-    <%= link_to tour_path(tour.id) do %>
+<%# then create a card with the appropriate image source: %>
+    <%= link_to tour_path(tour.id), class: "tour-card" do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path tour.photo.key %>)"> <%= tour.name %>
       </div>
     <% end %>
   <% else %>
-    <%= link_to tour_path(tour.id) do %>
+    <%= link_to tour_path(tour.id), class: "tour-card" do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tour.photo_url %>)"> <%= tour.name %>
       </div>
     <% end %>
