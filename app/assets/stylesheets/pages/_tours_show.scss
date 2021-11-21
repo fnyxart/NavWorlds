@@ -97,17 +97,20 @@ body {
 
 .btn-booking:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 16px !important;
-  transition: opacity 1.25s ease 0s !important;
+}
+
+#booking_dates_1i, #booking_dates_2i, #booking_dates_3i {
+  border-radius: 9px;
+  border: solid 2px #38AECC ;
+  height: 34px;
 }
 
 #booking_dates_1i, #booking_dates_3i {
-  width: 19%;
-  border-radius: 3px;
+  width: 20%;
 }
 
 #booking_dates_2i {
-  width: 59%;
-  border-radius: 3px;
+  width: 56%;
 }
 
 #tour-price {
