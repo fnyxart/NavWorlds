@@ -1,93 +1,109 @@
 <% tour_reviews = @tour.reviews.count %>
+<div class="show-container">
 
-<div class="tour-show-container">
-  <h1 id="tour-title"> <%= @tour.name.capitalize %></h1>
-  <div class="booking-card-rating">
-    <span class= "review-average-rating">
-      <% counter = 0 %>
-      <% @tour.bookings.each do |booking| %>
-        <% if booking.reviews.present? %>
-          <% counter += booking.reviews.first.rating.to_f %>
+  <div class="title-container">
+    <h1 id="tour-title"> <%= @tour.name.capitalize %></h1>
+
+    <div class="tour-rating">
+      <span class= "reviews-average-rating">
+        <% counter = 0 %>
+        <% @tour.bookings.each do |booking| %>
+          <% if booking.reviews.present? %>
+            <% counter += booking.reviews.first.rating.to_f %>
+          <% end %>
+          <% counter %>
         <% end %>
-        <% counter %>
-      <% end %>
-      <i class="fas fa-star"></i>
-      <%= (counter/tour_reviews) unless tour_reviews.zero? %>
-    </span>
-    <span class="review-number">(<%= tour_reviews %> reviews)</span>
+        <i class="fas fa-star"></i>
+        <%= (counter/tour_reviews) unless tour_reviews.zero? %>
+      </span>
+      <span class="reviews-number">(<%= tour_reviews %> reviews)</span>
+    </div>
   </div>
 
-  <p>
+  <div class="image-container">
     <% if @tour.photo.attached? %>
       <%= cl_image_tag @tour.photo.key, crop: :fill %>
     <% else %>
-      <img id="tour-show-image" src='<%= @tour.photo_url%>' style=''>
+      <img id="tour-show-image" src='<%= @tour.photo_url%>'>
     <% end %>
-    <div class="container-2">
-      <div class="item-container-2">
-        <% user = User.find(@tour.user_id) %>
-        <p id="tour-guide-name">Tour hosted by <%= user.name %></p>
-        <div class="solid-line"></div>
-        <p id="tour-show-description-title">Description</p> <p id="tour-show-description"><%= @tour.description %></p>
-        <div class="solid-line"></div>
+  </div>
+  <div class= "flexbox">
+    <div class="text-container flex-item">
+      <div id="item-text-container">
+          <% user = User.find(@tour.user_id) %>
+          <p id="tour-guide-name">Tour hosted by <%= user.name %></p>
       </div>
-      <div class="item-container-2">
-        <div class="booking-container">
-          <div class="booking-card-details">
-            <span id="tour-price"> <strong>£<%= @tour.price %></strong></span>
-            <span id= "tour-details">/ tour</span>
-            <span class="booking-card-rating">
-              <span class= "review-average-rating">
-                <i class="fas fa-star"></i>
-                <%= (counter/tour_reviews) unless tour_reviews.zero? %>
-              </span>
-                 <span class="review-number">(<%= tour_reviews %> reviews)</span>
-            </span>
-          </div>
-          <%= simple_form_for [@tour, @booking] do |f| %>
-            <div class="form-inputs w-100">
-              <%= f.date_select :dates, class: "booking-select" %>
-              <br>
-              <br>
-              <%= f.submit class: 'btn btn-nw-primary btn-booking' %>
-            </div>
+
+      <div class="solid-line"></div>
+
+      <div class="item-text-container tour-description">
+        <p id="description-title">Description</p>
+        <p id="tour-description"><%= @tour.description %></p>
+      </div>
+
+      <div class="solid-line"></div>
+
+      <div class="item-text-container review-container">
+        <div class="review-card-rating">
+          <span class= "review-average-rating">
+            <i class="fas fa-star"></i>
+            <%= (counter/tour_reviews) unless tour_reviews.zero? %>
+          </span>
+          <span class="review-card-review-number">· <%= tour_reviews %> reviews</span>
+        </div>
+
+        <div class="users-reviews">
+          <% @tour.bookings.each do |booking| %>
+            <% if booking.reviews.present? %>
+              <% user = User.find(booking.user_id) %>
+              <p><strong><%= user.name %></strong></p>
+              <p class= "review-content"><%= booking.reviews.first.content %></p>
+            <% end %>
           <% end %>
-          <div class= booking-price-container>
-            <span class="booking-price-title">Tour</span>
-            <span class="booking-price-amount">£<%= @tour.price %></span>
-          </div>
-          <div class= booking-fee-container>
-            <span class="booking-fee-title">Booking fee</span>
-            <span class="booking-fee-amount">£<%= fee = ((@tour.price * 5)/100) %></span>
-          </div>
-          <div class="booking-solid-line"></div>
-          <div class= booking-total-container>
-            <span class="booking-total-title">Total</span>
-            <span class="booking-total-amount">£<%= fee + @tour.price %></span>
-          </div>
         </div>
       </div>
     </div>
-  </p>
-</div>
 
-<div class="review-container">
-  <div class="review-card-rating">
-    <span class= "review-average-rating">
-      <i class="fas fa-star"></i>
-      <%= (counter/tour_reviews) unless tour_reviews.zero? %>
-    </span>
-    <span class="review-card-review-number">· <%= tour_reviews %> reviews</span>
-  </div>
-  <div>
-    <div class="review-container-item">
-      <% @tour.bookings.each do |booking| %>
-        <% if booking.reviews.present? %>
-          <% user = User.find(booking.user_id) %>
-          <p><strong><%= user.name %></strong></p>
-          <p class= "review-content"><%= booking.reviews.first.content %></p>
+    <div class= "booking-container flex-item">
+      <div class="booking-card-details">
+        <span id="tour-price"> <strong>£<%= @tour.price %></strong></span>
+        <span id= "tour-details">/ tour</span>
+        <span class="booking-card-rating">
+          <span class= "review-average-rating">
+            <i class="fas fa-star"></i>
+            <%= (counter/tour_reviews) unless tour_reviews.zero? %>
+          </span>
+          <span class="review-number">(<%= tour_reviews %> reviews)</span>
+        </span>
+      </div>
+
+      <div class="booking-form">
+        <%= simple_form_for [@tour, @booking] do |f| %>
+          <div class="form-inputs w-100">
+            <%= f.date_select :dates, class:'booking-select' %>
+            <br>
+            <br>
+            <%= f.submit 'Book', class:'btn btn-nw-primary btn-booking'%>
+          </div>
         <% end %>
-      <% end %>
+
+        <div class= booking-price-container>
+          <span class="booking-price-title">Tour</span>
+          <span class="booking-price-amount">£<%= @tour.price %></span>
+        </div>
+
+        <div class= booking-fee-container>
+          <span class="booking-fee-title">Booking fee</span>
+          <span class="booking-fee-amount">£<%= fee = ((@tour.price * 5)/100) %></span>
+        </div>
+
+        <div class="booking-solid-line"></div>
+
+        <div class= booking-total-container>
+          <span class="booking-total-title">Total</span>
+          <span class="booking-total-amount">£<%= fee + @tour.price %></span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

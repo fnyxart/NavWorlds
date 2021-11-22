@@ -2,95 +2,115 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
-.tour-show-container, .review-container {
-  margin-left: 10% !important;
-  font-family: Poppins !important;
-}
-
-.tour-show-container {
-  width: 90%;
-  height: 870px;
+.show-container {
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
   color: #222222;
 }
 
 #tour-title {
-  font-size: 40px;
+  font-size: 50px;
   font-family: Fjalla One;
   margin-top: 30px;
 }
 
+.tour-rating {
+  margin-top: -14px;
+  font-size: 16px;
+}
+
 #tour-show-image {
- width: 90%;
+ width: 100%;
  height: 400px;
  object-fit: cover;
  border-radius: 10px;
  margin-top: 10px;
- display: block;
 }
 
-#tour-show-description-title, #tour-guide-name {
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text-container {
+  width: 70%;
+  margin-top: 37px;
+}
+
+#description-title, #tour-guide-name {
   font-size: 25px;
-  margin-top: 12px;
   font-weight: bolder;
 }
 
-#tour-show-description {
+#tour-description {
   font-size: 19px;
-  width: 90%;
   text-align: justify;
 }
 
-.container-2 .solid-line {
-  width: 90%;
-  margin-top: 25px;
-  margin-bottom: 25px;
+.solid-line {
+  margin-top: 30px;
+  margin-bottom: 30px;
   border-top-width: 1px !important;
   border-top-style: solid !important;
   border-top-color: rgb(201, 196, 196);
 }
-.btn-booking {
-  width: 100%;
-  align-self: center;
-  border-radius: 3px;
+
+.users-reviews {
+  font-size: 19px;
 }
 
-#booking_dates_1i, #booking_dates_3i {
-  width: 19%;
-  border-radius: 3px;
+.review-card-rating {
+  font-size: 25px;
+  margin-bottom: 1rem ;
+  font-weight: bolder;
 }
 
-#booking_dates_2i {
-  width: 59%;
-  border-radius: 3px;
+.review-card-review-number {
+  color: #222222;
 }
 
-.container-2 {
-  display: flex !important;
-  flex-direction: row;
-  width: 90%;
-  justify-content: space-between;
-}
-
-.item-container-2 {
-  display: inline-block;
-  vertical-align: middle
+.review-content {
+  margin-top: -10px;
+  margin-bottom: 17px;
+  text-align: justify;
 }
 
 .booking-container {
   background: white;
-  box-shadow: 0 6px 16px rgba(0,0,0, 0.12);
+  box-shadow: 0 6px 16px rgba(97, 54, 54, 0.12);
   border: 1px solid rgb(221, 221, 221);
   width: 350px;
-  height: 400px;
+  height:fit-content;
   border-radius: 10px;
   padding: 24px;
-  margin-top: 20px;
-  margin-bottom: 0;
+  margin-top: 37px;
 }
 
-.booking-card .item-container-2 {
-  padding: 16px;
-  align-items: center;
+.btn-booking {
+  width: 100%;
+  align-self: center;
+  border-radius: 9px;
+  color: white;
+}
+
+.btn-booking:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 16px !important;
+}
+
+#booking_dates_1i, #booking_dates_2i, #booking_dates_3i {
+  border-radius: 9px;
+  border: solid 2px #38AECC ;
+  height: 34px;
+}
+
+#booking_dates_1i, #booking_dates_3i {
+  width: 20%;
+}
+
+#booking_dates_2i {
+  width: 56%;
 }
 
 #tour-price {
@@ -125,33 +145,4 @@ body {
 .fa-star {
   color: #4494a9;
   margin-bottom: 10px;
-}
-
-.review-container {
-  width: 90%;
-}
-
-.review-title {
-  font-size: 25px;
-}
-
-.review-container-item {
-  font-size: 19px;
-}
-
-.review-card-rating {
-  font-size: 25px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  font-weight: bolder;
-}
-
-.review-card-review-number {
-  color: #222222;
-}
-
-.review-content {
-  margin-top: -10px;
-  margin-bottom: 30px;
-  text-align: justify;
 }
